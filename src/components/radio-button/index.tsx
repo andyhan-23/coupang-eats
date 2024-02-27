@@ -6,7 +6,7 @@ type RadioButtonPropsType = {
   price: number;
   required: number;
 };
-const RadioButton = (props: RadioButtonPropsType) => {
+const RadioButton = (props: any) => {
   const { name, price } = props;
 
   const dispatch = useDispatch();

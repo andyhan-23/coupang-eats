@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addQuantity, minusQuantity, isUpdate } from "@/store/cart";
 
-const OrderItem = (props) => {
+const OrderItem = props => {
   const dispatch = useDispatch();
   const {
     index,

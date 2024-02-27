@@ -15,8 +15,8 @@ const loadDataDelayed = () => {
 };
 
 const getMenuList = async () => {
-  const data = await loadData(URL.menuList);
-  return data;
+  const response = await loadData(URL.menuList);
+  return response.data;
 };
 
 export default getMenuList;

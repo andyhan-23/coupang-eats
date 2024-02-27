@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+interface ItemsT {
+  items: undefined[];
+}
+
 type initialStateType = {
   id: string;
   mainMenuName: string;
@@ -12,8 +16,11 @@ type initialStateType = {
   menuId: string;
   totalQuantity: number;
   isUpdate: boolean;
+  items: ItemsT;
+  nextItemId: number;
 };
-const initialState: initialStateType[] = {
+
+const initialState: any = {
   items: [],
   nextItemId: 1,
 };
@@ -43,18 +50,18 @@ const cart = createSlice({
     },
     addQuantity(state, action) {
       const findItem = state.items.find(
-        (value) => value.id === `basketItem${action.payload}`
+        value => value.id === `basketItem${action.payload}`
       );
       findItem.totalQuantity += 1;
       findItem.allPrice = findItem.totalPrice * findItem.totalQuantity;
     },
     minusQuantity(state, action) {
       const findItem = state.items.find(
-        (value) => value.id === `basketItem${action.payload}`
+        value => value.id === `basketItem${action.payload}`
       );
       findItem.totalQuantity -= 1;
       findItem.allPrice = findItem.totalPrice * findItem.totalQuantity;
-      const id = state.items.findIndex((v) => {
+      const id = state.items.findIndex(v => {
         return v.id === `basketItem${action.payload}`;
       });
 
@@ -64,7 +71,7 @@ const cart = createSlice({
     },
     isUpdate(state, action) {
       const findItem = state.items.find(
-        (value) => value.id === `basketItem${action.payload}`
+        value => value.id === `basketItem${action.payload}`
       );
       findItem.isUpdate = true;
     },

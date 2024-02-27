@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import OrderItem from "@/components/order-item";
 
 const OrderItemContainer = () => {
-  const cart = useSelector((state) => state.persistedReducer.cart.items);
+  const cart = useSelector((state: any) => state.persistedReducer.cart.items);
   return (
     <div>
       {cart.map((value, index) => {

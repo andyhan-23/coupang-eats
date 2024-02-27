@@ -28,4 +28,7 @@ export type DataT =
   | undefined
   | Record<string, VendorDataT>;
 
-export type CallBackType = (req: RestRequest, data: DataT) => DataT;
+export type CallBackType = (
+  req: RestRequest,
+  data: DataT
+) => DataT | MenuDataT | VendorDataT | undefined;

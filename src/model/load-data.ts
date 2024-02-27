@@ -1,5 +1,4 @@
 import instnce from "./request";
-import axios from "axios";
 
 const loadData = async (path: string) => {
   try {

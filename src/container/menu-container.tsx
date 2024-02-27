@@ -6,10 +6,12 @@ type MenuContainerTypes = {
   menuId: string | undefined;
   basketId: string | undefined;
 };
-const MenuContainer = (props: MenuContainerTypes) => {
+const MenuContainer = (props: any) => {
   const { menuId, basketId } = props;
   const { data: menu, isLoading, error } = useFetchMenu(menuId);
-  const cartArr = useSelector(state => state.persistedReducer.cart.items);
+  const cartArr = useSelector(
+    (state: any) => state.persistedReducer.cart.items
+  );
   const newArr = cartArr.filter(value => value.id === `basketItem${basketId}`);
 
   if (isLoading) return <div>로딩중입니다.</div>;

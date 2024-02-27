@@ -22,9 +22,9 @@ type CheckBoxType = {} & RadioButtonType;
 
 const MenuOptionContainer = (props: MenuOptionContainerTypes) => {
   const { id } = props;
-  const subMenuArr = useFetchSub();
-  const sideMenuArr = useFetchSide();
-  const isRed = useSelector((state) => state.menu.isRed);
+  const subMenuArr: any = useFetchSub();
+  const sideMenuArr: any = useFetchSide();
+  const isRed = useSelector((state: any) => state.menu.isRed);
   return (
     <div>
       <div className="my-8 border-1 rounded-lg overflow-x-hidden shadow-lg">

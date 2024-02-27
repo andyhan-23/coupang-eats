@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Menu = props => {
   const [isDisable, setIsDisable] = useState(true);
-  const menuStore = useSelector(state => state.menu);
+  const menuStore = useSelector((state: any) => state.menu);
 
   const dispatch = useDispatch();
   const { name, imageSrc, price, isUpdate, updateItem } = props;

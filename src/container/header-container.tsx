@@ -3,7 +3,6 @@ import useFetchVendor from "@/hooks/use-fetch-vendor";
 
 const HeaderContainer = (props): JSX.Element => {
   const { data } = props;
-
   // const { data, isLoading, error } = useFetchVendor();
 
   // if (isLoading) return <div>로딩중 입니다</div>;

@@ -1,8 +1,9 @@
 import axios from "axios";
 import initMocks from "@/mock";
 import URL from "./constant";
+import { InternalAxiosRequestConfig } from "axios";
 
-type configType = {
+type pathType = {
   url: string;
 };
 
@@ -10,8 +11,8 @@ const instnce = axios.create({
   baseURL: URL.base,
 });
 
-const splitUrl = (config: configType) => {
-  let tempUrl = config.url.split("/");
+const splitUrl = (path: pathType | InternalAxiosRequestConfig) => {
+  let tempUrl = path.url.split("/");
   return `/${tempUrl[1]}`;
 };
 
@@ -23,7 +24,7 @@ instnce.interceptors.request.use(config => {
     URL.menuList === currentUrl ||
     URL.menu === currentUrl
   ) {
-    //initMocks();
+    initMocks();
     config.baseURL = null;
   } else throw new Error(`${config.url}는 잘못된 요청입니다.`);
   return config;
@@ -31,7 +32,7 @@ instnce.interceptors.request.use(config => {
 
 instnce.interceptors.response.use(async response => {
   try {
-    const result = await response.data;
+    const result = await response;
     if (!result) throw new Error("데이터가 없습니다.");
     return result;
   } catch (error) {

@@ -4,20 +4,13 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { changeColor } from "@/store/menu";
 
-type BasketTypes = {
-  price: string;
-  id: string;
-  name: string;
-};
-
-const Basket = (props: BasketTypes): JSX.Element => {
+const Basket = (props: any): JSX.Element => {
   const [showToast, setShowToast] = useState(false);
-
   const navigate = useNavigate();
   const location = useLocation();
   const { price, id, name } = props;
-  const orderItem = useSelector((state) => state.menu);
-  const arr = useSelector((state) => state.persistedReducer.cart.items);
+  const orderItem = useSelector((state: any) => state.menu);
+  const arr = useSelector((state: any) => state.persistedReducer.cart.items);
   const paymentAmount = arr.reduce((acc, cur) => acc + cur.allPrice, 0);
   const totalPrice =
     (price + orderItem.requiredPrice + orderItem.optionalPrice) *

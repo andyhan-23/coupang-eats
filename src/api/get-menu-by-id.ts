@@ -6,7 +6,7 @@ const getMenuById = () =>
     "get",
     "/menu/:id",
     getData("menu"),
-    (req, data) => data?.[req.params.id]
+    (req, data) => data?.[req.params.id as string]
   );
 
 export default getMenuById;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import getData from "@/model/get-data";
+
 import Layout from "@/layout";
 import MainMenuList from "@/page/main-menu-list";
 import MenuListContainer from "./menu-list-container";
@@ -13,7 +13,7 @@ const MainPageContainer = () => {
   //const { data, isLoading, error } = getData("getMenu", "/menu");
   const { isLoading, error, data } = useQuery({
     queryKey: ["menuData"],
-    queryFn: () => fetch("/menu").then((res) => res.json()),
+    queryFn: () => fetch("/menu").then(res => res.json()),
   });
 
   const { data: vendor, isLoading: vendorLoading } = useFetchVendor();

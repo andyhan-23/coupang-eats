@@ -32,7 +32,7 @@ const menu = createSlice({
     checkBox(state, action) {
       if (action.payload.check) {
         state.optionalPrice += action.payload.price;
-        const obj = {};
+        const obj: any = {};
         obj.price = action.payload.price;
         obj.name = action.payload.name;
         //state.sideMenuName.push(action.payload.name);
@@ -40,7 +40,7 @@ const menu = createSlice({
       } else {
         state.optionalPrice -= action.payload.price;
         state.sideMenuName = state.sideMenuName.filter(
-          (item) => item.name !== action.payload.name
+          item => item.name !== action.payload.name
         );
       }
     },
