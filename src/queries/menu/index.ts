@@ -31,11 +31,11 @@ export const useFetchMain = (): mainMenuArrType[] | undefined | Error => {
     error: menuDataError,
   } = useFetchMenuList();
 
-  if (menuDataLoading) return "메인 메뉴 불러오는 중...";
+  if (menuDataLoading) return;
   if (menuDataError) return new Error("error fetching main menu data");
   const mainMenus = Object.keys(menuData)
-    .filter((menuId) => menuData[menuId].type === "main")
-    .map((menuId) => menuData[menuId]);
+    .filter(menuId => menuData[menuId].type === "main")
+    .map(menuId => menuData[menuId]);
   return mainMenus;
 };
 
@@ -49,8 +49,8 @@ export const useFetchSub = () => {
   if (menuDataLoading) return;
   if (menuDataError) return menuDataError;
   const subMenus = Object.keys(menuData)
-    .filter((menuId) => menuData[menuId].type === "sub")
-    .map((menuId) => menuData[menuId]);
+    .filter(menuId => menuData[menuId].type === "sub")
+    .map(menuId => menuData[menuId]);
   return subMenus;
 };
 
@@ -64,7 +64,7 @@ export const useFetchSide = () => {
   if (menuDataLoading) return;
   if (menuDataError) return menuDataError;
   const sideMenus = Object.keys(menuData)
-    .filter((menuId) => menuData[menuId].type === "side")
-    .map((menuId) => menuData[menuId]);
+    .filter(menuId => menuData[menuId].type === "side")
+    .map(menuId => menuData[menuId]);
   return sideMenus;
 };
