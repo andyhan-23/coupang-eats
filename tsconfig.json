@@ -11,6 +11,7 @@
         "./src/*"
       ]
     },
+    
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -22,7 +23,7 @@
 
     /* Linting */
     "strict": false,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
