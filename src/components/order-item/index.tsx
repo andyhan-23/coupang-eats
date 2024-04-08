@@ -61,7 +61,6 @@ const OrderItem = props => {
             +
           </button>
         </div>
-        <button onClick={handleClickToUpdatePage}>수정하기</button>
       </div>
     </div>
   );
