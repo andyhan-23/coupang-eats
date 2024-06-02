@@ -6,7 +6,7 @@ type MenuContainerTypes = {
   menuId: string | undefined;
   basketId: string | undefined;
 };
-const MenuContainer = (props: any) => {
+const MenuContainer = (props: MenuContainerTypes) => {
   const { menuId, basketId } = props;
   const { data: menu, isLoading, error } = useFetchMenu(menuId);
   const cartArr = useSelector(

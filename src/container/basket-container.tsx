@@ -1,7 +1,4 @@
 import Basket from "@/components/basket";
-import { useSelector, useDispatch } from "react-redux";
-import { addCart } from "@/store/cart";
-import { useNavigate, useLocation } from "react-router-dom";
 import { useFetchMenu } from "@/queries/menu";
 
 type BasketContainerType = {
