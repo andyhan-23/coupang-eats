@@ -1,4 +1,3 @@
-import { QueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 
 type MenuListType = {
