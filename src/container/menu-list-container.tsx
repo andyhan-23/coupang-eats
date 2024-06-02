@@ -1,5 +1,3 @@
-//import { useFetchMain } from "@/queries/menu";
-import { useFetchMain } from "@/hooks/use-fetch-menu";
 import MenuList from "@/components/menu-list";
 
 type mainMenuArrType = {
@@ -16,7 +14,6 @@ type mainMenuArrType = {
 
 const MenuListContainer = (props): JSX.Element => {
   const { mainMenuDataArr } = props;
-  const mainMenuArr = useFetchMain();
 
   return (
     <div>
