@@ -1,11 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addCart } from "@/store/cart";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { changeColor } from "@/store/menu";
 
 const Basket = (props: any): JSX.Element => {
-  const [showToast, setShowToast] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { price, id, name } = props;
