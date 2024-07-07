@@ -4,7 +4,6 @@ import { radioButton } from "@/store/menu";
 type RadioButtonPropsType = {
   name: string;
   price: number;
-  required: number;
 };
 const RadioButton = (props: RadioButtonPropsType) => {
   const { name, price } = props;

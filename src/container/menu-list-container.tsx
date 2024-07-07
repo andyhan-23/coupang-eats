@@ -17,7 +17,7 @@ const MenuListContainer = (props): JSX.Element => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold p-2 bg-white">메뉴</h1>
+      <h1 className="text-3xl font-bold p-2 bg-white z-1">메뉴</h1>
       {mainMenuDataArr?.map((value: mainMenuArrType) => {
         return (
           <MenuList
