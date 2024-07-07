@@ -1,7 +1,7 @@
 import HeaderContainer from "@/container/header-container";
 import MenuListContainer from "@/container/menu-list-container";
 import Basket from "@/components/basket";
-import Layout from "@/layout";
+import { AppUi, UI } from "@/layout";
 import useFetchVendor from "@/hooks/use-fetch-vendor";
 import { useFetchMenuList } from "@/hooks/use-fetch-menu";
 
@@ -18,11 +18,13 @@ const MainPage = () => {
     .map(menuId => menuData[menuId]);
 
   return (
-    <Layout>
-      <HeaderContainer data={vendorData} />
-      <MenuListContainer mainMenuDataArr={mainMenus} />
-      <Basket />
-    </Layout>
+    <UI>
+      <AppUi>
+        <HeaderContainer data={vendorData} />
+        <MenuListContainer mainMenuDataArr={mainMenus} />
+        <Basket />
+      </AppUi>
+    </UI>
   );
 };
 

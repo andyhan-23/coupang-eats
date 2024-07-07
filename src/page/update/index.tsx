@@ -1,4 +1,4 @@
-import Layout from "@/layout";
+import Layout from "@/layout/app-ui";
 import MenuContainer from "@/container/menu-container";
 import MenuOptionContainer from "@/container/menu-option-container";
 import BasketContainer from "@/container/basket-container";

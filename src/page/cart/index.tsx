@@ -1,7 +1,7 @@
 import OrderItemContiner from "@/container/order-item-container";
 import HeaderContainer from "@/container/header-container";
 import Basket from "@/components/basket";
-import Layout from "@/layout";
+import Layout from "@/layout/app-ui";
 import useFetchVendor from "@/hooks/use-fetch-vendor";
 
 const Cart = () => {

@@ -1,4 +1,4 @@
-import Layout from "@/layout";
+import Layout from "@/layout/app-ui";
 import useFetchVendor from "@/queries/vendor";
 import { useQuery } from "react-query";
 import { useFetchMain } from "@/queries/menu";
