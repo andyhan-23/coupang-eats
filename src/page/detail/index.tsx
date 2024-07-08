@@ -18,7 +18,7 @@ const DetailPage = () => {
   return (
     <div>
       <Layout>
-        <MenuContainer menuId={id} />
+        <MenuContainer menuId={id} basketId={id} />
         <MenuOptionContainer id={id} />
         <BasketContainer id={id} />
       </Layout>
