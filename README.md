@@ -16,7 +16,8 @@
 [__결과물 링크 열기__](https://coupang-eats.vercel.app/)
 
 ## Preview
-<img width="908" alt="스크린샷 2024-06-03 오전 4 58 56" src="https://github.com/andyhan-23/coupang-eats/assets/98483125/d2c49cf8-7ece-4b0f-bcd2-098b380bce66">
+<img width="777" alt="스크린샷 2024-07-09 오전 8 15 14" src="https://github.com/andyhan-23/coupang-eats/assets/98483125/f3df5a5f-286a-4441-beea-15a6e7d1df75">
+
 
 
 ## 실행하는 법
