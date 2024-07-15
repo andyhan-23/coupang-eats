@@ -1,15 +1,22 @@
 import useFetchVendor from "@/hooks/use-fetch-vendor";
+import { ArrowBack } from "@/assets/icons";
+import { useNavigate } from "react-router-dom";
 
 const StoreInformationPage = () => {
+  const navigate = useNavigate();
   const { data: vendorData, isLoading: vendorDataLoading } = useFetchVendor();
 
+  const onClick = () => {
+    navigate(-1);
+  };
   if (vendorDataLoading)
     return <div className="p-4">가게 데이터 로딩중입니다.</div>;
 
   return (
     <div className="bg-white">
       <div className="max-w-4xl mx-auto p-8">
-        <div className="text-center">
+        <div className="text-center flex flex-row items-center ">
+          <ArrowBack className="mr-24 " onClick={onClick} />
           <h1 className="text-4xl font-bold">매장정보</h1>
         </div>
         <div className="mt-8 space-y-4">
