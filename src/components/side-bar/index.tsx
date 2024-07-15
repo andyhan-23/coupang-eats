@@ -1,7 +1,7 @@
 import { Box, VStack, HStack, Text, Container, Wrap } from "@chakra-ui/react";
 import { ArrowRight, TimerIcon } from "@/assets/icons";
 
-const SideBarContainer = () => {
+const SideBar = () => {
   return (
     <Box bg="white" w="100%" p={4} color="black">
       <VStack alignItems="flex-start" w="100%">
@@ -28,4 +28,4 @@ const SideBarContainer = () => {
   );
 };
 
-export default SideBarContainer;
+export default SideBar;

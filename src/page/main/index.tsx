@@ -1,6 +1,6 @@
 import HeaderContainer from "@/container/header-container";
 import MenuListContainer from "@/container/menu-list-container";
-import SideBarContainer from "@/container/sidebar";
+import SideBar from "@/components/side-bar";
 import Basket from "@/components/basket";
 import { AppUi, UI } from "@/layout";
 import useFetchVendor from "@/hooks/use-fetch-vendor";
@@ -22,7 +22,7 @@ const MainPage = () => {
     <UI>
       <AppUi>
         <HeaderContainer data={vendorData} />
-        <SideBarContainer />
+        <SideBar />
         <MenuListContainer mainMenuDataArr={mainMenus} />
         <Basket />
       </AppUi>
