@@ -22,7 +22,10 @@ const MainPage = () => {
     <UI>
       <AppUi>
         <HeaderContainer data={vendorData} />
-        <SideBar />
+        <SideBar
+          deliveryFee={vendorData.deliveryFee}
+          minimunOrderAmount={vendorData.minimumOrderAmount}
+        />
         <MenuListContainer mainMenuDataArr={mainMenus} />
         <Basket />
       </AppUi>

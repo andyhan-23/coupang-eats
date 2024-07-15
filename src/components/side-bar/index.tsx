@@ -1,7 +1,11 @@
-import { Box, VStack, HStack, Text, Container, Wrap } from "@chakra-ui/react";
+import { Box, VStack, HStack, Text, Wrap } from "@chakra-ui/react";
 import { ArrowRight, TimerIcon } from "@/assets/icons";
 
-const SideBar = () => {
+type SideBarProps = {
+  deliveryFee: string;
+  minimunOrderAmount: number;
+};
+const SideBar = ({ deliveryFee, minimunOrderAmount }: SideBarProps) => {
   return (
     <Box bg="white" w="100%" p={4} color="black">
       <VStack alignItems="flex-start" w="100%">
@@ -17,11 +21,11 @@ const SideBar = () => {
         </HStack>
         <HStack gap="50">
           <Text>최소주문</Text>
-          <Text>20,000원</Text>
+          <Text>{minimunOrderAmount}원</Text>
         </HStack>
         <HStack gap="50">
           <Text>배달비</Text>
-          <Text fontWeight="bold">무료배달</Text>
+          <Text fontWeight="bold">{deliveryFee}</Text>
         </HStack>
       </VStack>
     </Box>
