@@ -1,37 +1,40 @@
-import { Box, VStack, HStack, Text, Wrap } from "@chakra-ui/react";
 import { ArrowRight, TimerIcon } from "@/assets/icons";
+import { useNavigate } from "react-router-dom";
 
 type SideBarProps = {
   deliveryFee: string;
   minimunOrderAmount: number;
 };
+
 const SideBar = ({ deliveryFee, minimunOrderAmount }: SideBarProps) => {
-  const test = () => {
-    console.log("click");
+  const navigate = useNavigate();
+  const onClick = () => {
+    navigate("/storeinfo");
   };
+
   return (
-    <Box bg="white" w="100%" p={4} color="black">
-      <VStack alignItems="flex-start" w="100%">
-        <HStack justifyContent="space-between" w="100%">
-          <Wrap alignItems="center">
+    <div className="bg-white w-full p-4 text-black">
+      <div className="flex flex-col items-start w-full">
+        <div className="flex justify-between w-full mb-4">
+          <div className="flex items-center">
             <TimerIcon />
-            <Text fontWeight="bold">도착 까지 약 35분</Text>
-          </Wrap>
-          <Wrap alignItems="center" onClick={test} cursor="pointer">
-            <Text>매장 정보</Text>
+            <h1 className="ml-2 font-bold">도착 까지 약 35분</h1>
+          </div>
+          <div className="flex items-center cursor-pointer" onClick={onClick}>
+            <h1 className="mr-2">매장 정보</h1>
             <ArrowRight />
-          </Wrap>
-        </HStack>
-        <HStack gap="50">
-          <Text>최소주문</Text>
-          <Text>{minimunOrderAmount}원</Text>
-        </HStack>
-        <HStack gap="50">
-          <Text>배달비</Text>
-          <Text fontWeight="bold">{deliveryFee}</Text>
-        </HStack>
-      </VStack>
-    </Box>
+          </div>
+        </div>
+        <div className="flex gap-x-6 mb-2">
+          <h1>최소주문</h1>
+          <h1>{minimunOrderAmount}원</h1>
+        </div>
+        <div className="flex gap-x-6">
+          <h1>배달비</h1>
+          <h1 className="font-bold">{deliveryFee}</h1>
+        </div>
+      </div>
+    </div>
   );
 };
 
