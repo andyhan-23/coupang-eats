@@ -6,6 +6,9 @@ type SideBarProps = {
   minimunOrderAmount: number;
 };
 const SideBar = ({ deliveryFee, minimunOrderAmount }: SideBarProps) => {
+  const test = () => {
+    console.log("click");
+  };
   return (
     <Box bg="white" w="100%" p={4} color="black">
       <VStack alignItems="flex-start" w="100%">
@@ -14,7 +17,7 @@ const SideBar = ({ deliveryFee, minimunOrderAmount }: SideBarProps) => {
             <TimerIcon />
             <Text fontWeight="bold">도착 까지 약 35분</Text>
           </Wrap>
-          <Wrap alignItems="center">
+          <Wrap alignItems="center" onClick={test} cursor="pointer">
             <Text>매장 정보</Text>
             <ArrowRight />
           </Wrap>
