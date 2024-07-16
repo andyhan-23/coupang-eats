@@ -5,7 +5,6 @@ import Basket from "@/components/basket";
 import { AppUi, UI } from "@/layout";
 import useFetchVendor from "@/hooks/use-fetch-vendor";
 import { useFetchMenuList } from "@/hooks/use-fetch-menu";
-import { useEffect } from "react";
 
 const MainPage = () => {
   const { data: vendorData, isLoading: vendorDataLoading } = useFetchVendor();

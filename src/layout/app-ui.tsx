@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
 const AppUi = ({ children }: PropsWithChildren) => {
-  return <div className="max-w-lg min-h-screen m-auto ">{children}</div>;
+  return <div className="max-w-lg max-h-1 m-auto ">{children}</div>;
 };
 
 export default AppUi;

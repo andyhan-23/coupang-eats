@@ -1,7 +1,7 @@
 import MenuContainer from "@/container/menu-container";
 import MenuOptionContainer from "@/container/menu-option-container";
 import BasketContainer from "@/container/basket-container";
-import Layout from "@/layout/app-ui";
+import { AppUi, UI } from "@/layout";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setInitialState } from "@/store/menu";
@@ -16,13 +16,13 @@ const DetailPage = () => {
     };
   }, []);
   return (
-    <div>
-      <Layout>
+    <UI>
+      <AppUi>
         <MenuContainer menuId={id} basketId={id} />
         <MenuOptionContainer id={id} />
         <BasketContainer id={id} />
-      </Layout>
-    </div>
+      </AppUi>
+    </UI>
   );
 };
 

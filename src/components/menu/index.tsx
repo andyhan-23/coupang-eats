@@ -1,8 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addQuantity, minusQuantity } from "@/store/menu";
 import { useState } from "react";
+import { ArrowBack } from "@/assets/icons";
+import { useNavigate } from "react-router-dom";
 
 const Menu = props => {
+  const naigate = useNavigate();
   const [isDisable, setIsDisable] = useState(true);
   const menuStore = useSelector((state: any) => state.menu);
 
@@ -26,9 +29,13 @@ const Menu = props => {
       setIsDisable(true);
     }
   };
+  const handleBack = () => {
+    naigate(-1);
+  };
   return (
     <div>
       <div>
+        <ArrowBack className="m-4" onClick={handleBack} />
         <div className="flex items-center justify-center">
           <img src={imageSrc} width="300px" />
         </div>
