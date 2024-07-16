@@ -1,5 +1,6 @@
 import { ArrowRight, TimerIcon } from "@/assets/icons";
 import { useNavigate } from "react-router-dom";
+import useFormatNumber from "@/hooks/use-format-number";
 
 type SideBarProps = {
   deliveryFee: string;
@@ -27,7 +28,7 @@ const SideBar = ({ deliveryFee, minimunOrderAmount }: SideBarProps) => {
         </div>
         <div className="flex gap-x-6 mb-2">
           <h1>최소주문</h1>
-          <h1>{minimunOrderAmount}원</h1>
+          <h1>{useFormatNumber(minimunOrderAmount)}원</h1>
         </div>
         <div className="flex gap-x-6">
           <h1>배달비</h1>
