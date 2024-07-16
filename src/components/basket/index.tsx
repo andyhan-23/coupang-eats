@@ -10,6 +10,7 @@ const Basket = (props: any): JSX.Element => {
   const { price, id, name } = props;
   const orderItem = useSelector((state: any) => state.menu);
   const arr = useSelector((state: any) => state.persistedReducer.cart.items);
+  console.log("arr확인", arr);
   const paymentAmount = arr.reduce((acc, cur) => acc + cur.allPrice, 0);
   const totalPrice =
     (price + orderItem.requiredPrice + orderItem.optionalPrice) *
@@ -60,7 +61,7 @@ const Basket = (props: any): JSX.Element => {
           <p className="text-white text-xl">{useFormatNumber(totalPrice)}원</p>
         </div>
       )}
-      {location.pathname === "/cart" && (
+      {location.pathname === "/cart" && arr.length > 0 && (
         <div
           className="bg-sky-500 rounded-md cursor-pointer flex p-5 justify-around shadow-md items-center sticky bottom-0"
           onClick={handleClearLocalStorage}
@@ -68,6 +69,14 @@ const Basket = (props: any): JSX.Element => {
           <p className="text-white text-xl">
             {useFormatNumber(paymentAmount)}원 결제하기
           </p>
+        </div>
+      )}
+      {location.pathname === "/cart" && arr.length === 0 && (
+        <div
+          className="bg-sky-500 rounded-md cursor-pointer flex p-5 justify-around shadow-md items-center sticky bottom-0"
+          onClick={handleClearLocalStorage}
+        >
+          <p className="text-white text-xl">맛집 구경가기</p>
         </div>
       )}
     </>
