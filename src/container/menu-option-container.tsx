@@ -31,8 +31,8 @@ const MenuOptionContainer = (props: MenuOptionContainerTypes) => {
         <div
           className={
             isRed
-              ? `text-lg text-red-500 font-bold m-4`
-              : `text-lg text-black font-bold m-4`
+              ? `text-2xl text-red-500 font-bold m-4`
+              : `text-2xl text-black font-bold m-4`
           }
         >
           필수
@@ -51,7 +51,7 @@ const MenuOptionContainer = (props: MenuOptionContainerTypes) => {
         })}
       </div>
       <div className="my-8 border-1 rounded-lg overflow-x-hidden shadow-lg">
-        <div className="text-lg font-bold m-4">선택</div>
+        <div className="text-2xl font-bold m-4">선택</div>
         {sideMenuArr?.map((value: CheckBoxType) => {
           const isInclude = value.refId.includes(id as string);
           if (isInclude) {

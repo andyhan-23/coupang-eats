@@ -7,7 +7,7 @@ const Menu = props => {
   const menuStore = useSelector((state: any) => state.menu);
 
   const dispatch = useDispatch();
-  const { name, imageSrc, price, isUpdate, updateItem } = props;
+  const { name, imageSrc, price, isUpdate, updateItem, description } = props;
 
   const handleIncrease = () => {
     if (isUpdate) {
@@ -32,26 +32,28 @@ const Menu = props => {
         <div className="flex items-center justify-center">
           <img src={imageSrc} width="300px" />
         </div>
-        <p className="text-lg font-bold text-center m-4">{name}</p>
-
+        <p className="text-3xl font-bold text-left m-4">{name}</p>
+        <p className="text-lg text-gray-400 text-left m-4">{description}</p>
         <div className="border-1 rounded-lg overflow-x-hidden shadow-lg ">
           <div className="flex justify-between p-4">
-            <p className="text-lg font-semibold">가격</p>
-            <p className="text-gray-500 text-sm">{price.defaultPrice}원</p>
+            <p className="text-2xl font-semibold">가격</p>
+            <p className="text-xl">{price.defaultPrice}원</p>
           </div>
           <div className="flex items-center justify-between p-4">
-            <div className="text-lg font-semibold">수량</div>
+            <div className="text-2xl font-semibold">수량</div>
             <div className="flex items-center">
               <button
-                className="rounded-full bg-gray-200 w-8 h-8 items-center justify-center m-1"
+                className="rounded-full bg-gray-200 w-10 h-10 items-center justify-center m-1"
                 onClick={handleDecrease}
                 disabled={isDisable}
               >
                 -
               </button>
-              <p>{isUpdate ? updateItem.quantity : menuStore.quantity}</p>
+              <p className="text-2xl">
+                {isUpdate ? updateItem.quantity : menuStore.quantity}
+              </p>
               <button
-                className="rounded-full bg-gray-200 w-8 h-8 items-center justify-center m-1"
+                className="rounded-full bg-gray-200 w-10 h-10 items-center justify-center m-1"
                 onClick={handleIncrease}
               >
                 +

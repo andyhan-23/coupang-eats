@@ -30,21 +30,21 @@ const Basket = (props: any): JSX.Element => {
     <>
       {location.pathname === "/" && arr.length > 0 && (
         <div
-          className="bg-cyan-300 rounded-md cursor-pointer flex p-5 justify-around shadow-md items-center sticky bottom-0"
+          className="bg-sky-500 rounded-md cursor-pointer flex p-5 justify-between shadow-md items-center sticky bottom-0"
           onClick={handleClickToCart}
         >
           <div className="flex items-center">
-            <p className="text-white text-xl m-1 ">장바구니로 이동</p>
             <div className="rounded-full bg-white w-8 h-8 flex items-center justify-center">
-              <p className="text-cyan-300 text-xl ">{arr.length}</p>
+              <p className="text-sky-500 text-xl ">{arr.length}</p>
             </div>
+            <p className="text-white text-xl m-1 ">카트 보기</p>
           </div>
           <p className="text-white text-xl">{paymentAmount}원</p>
         </div>
       )}
       {location.pathname === `/detail/${id}` && (
         <div
-          className="bg-cyan-300 rounded-md cursor-pointer flex p-5 justify-around shadow-md items-center sticky bottom-0"
+          className="bg-sky-500 rounded-md cursor-pointer flex p-5 justify-around shadow-md items-center sticky bottom-0"
           onClick={handleClickToHome}
         >
           <p className="text-white text-xl">{orderItem.quantity}개 담기</p>

@@ -22,6 +22,7 @@ const MenuContainer = (props: MenuContainerTypes) => {
     <Menu
       name={menu.name}
       id={basketId}
+      description={menu.description}
       imageSrc={menu.imageSrc}
       price={menu.price}
       isUpdate={newArr[0]?.isUpdate}
