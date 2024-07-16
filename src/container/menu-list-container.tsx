@@ -4,6 +4,7 @@ type mainMenuArrType = {
   id: string;
   imageSrc: string;
   name: string;
+  description: string;
   price: {
     defaultPrice: number;
     salePrice: number;
@@ -25,6 +26,7 @@ const MenuListContainer = (props): JSX.Element => {
             imageSrc={value.imageSrc}
             price={value.price.defaultPrice}
             name={value.name}
+            description={value.description}
             id={value.id}
           />
         );
