@@ -75,9 +75,13 @@ const cart = createSlice({
       );
       findItem.isUpdate = true;
     },
+    clearCart(state) {
+      state.items = [];
+    },
   },
 });
 
-export const { addCart, addQuantity, minusQuantity, isUpdate } = cart.actions;
+export const { addCart, addQuantity, minusQuantity, isUpdate, clearCart } =
+  cart.actions;
 
 export default cart;

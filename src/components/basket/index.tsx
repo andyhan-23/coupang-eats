@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addCart } from "@/store/cart";
+import { addCart, clearCart } from "@/store/cart";
 import { useNavigate, useLocation } from "react-router-dom";
 import { changeColor } from "@/store/menu";
+import useFormatNumber from "@/hooks/use-format-number";
 
 const Basket = (props: any): JSX.Element => {
   const navigate = useNavigate();
@@ -26,6 +27,12 @@ const Basket = (props: any): JSX.Element => {
   const handleClickToCart = () => {
     navigate("/cart");
   };
+
+  const handleClearLocalStorage = () => {
+    localStorage.clear();
+    dispatch(clearCart());
+    navigate("/");
+  };
   return (
     <>
       {location.pathname === "/" && arr.length > 0 && (
@@ -39,7 +46,9 @@ const Basket = (props: any): JSX.Element => {
             </div>
             <p className="text-white text-xl m-1 ">카트 보기</p>
           </div>
-          <p className="text-white text-xl">{paymentAmount}원</p>
+          <p className="text-white text-xl">
+            {useFormatNumber(paymentAmount)}원
+          </p>
         </div>
       )}
       {location.pathname === `/detail/${id}` && (
@@ -48,12 +57,17 @@ const Basket = (props: any): JSX.Element => {
           onClick={handleClickToHome}
         >
           <p className="text-white text-xl">{orderItem.quantity}개 담기</p>
-          <p className="text-white text-xl">{totalPrice}원</p>
+          <p className="text-white text-xl">{useFormatNumber(totalPrice)}원</p>
         </div>
       )}
       {location.pathname === "/cart" && (
-        <div className="bg-cyan-300 rounded-md cursor-pointer flex p-5 justify-around shadow-md items-center sticky bottom-0">
-          <p className="text-white text-xl">{paymentAmount}원 결제하기</p>
+        <div
+          className="bg-sky-500 rounded-md cursor-pointer flex p-5 justify-around shadow-md items-center sticky bottom-0"
+          onClick={handleClearLocalStorage}
+        >
+          <p className="text-white text-xl">
+            {useFormatNumber(paymentAmount)}원 결제하기
+          </p>
         </div>
       )}
     </>
