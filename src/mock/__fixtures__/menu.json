@@ -2,7 +2,6 @@
   "1": { 
     "id": "1", 
     "name": "페퍼로니 피자",
-    "description": "치즈, 페퍼로니",
     "type": "main",
     "price": {
       "defaultPrice": 9000,
@@ -15,7 +14,6 @@
     "id": "2",
       "name": "콤비네이션 피자",
       "type": "main",
-      "description": "페퍼로니, 포크토핑, 새송이버섯",
       "price": {
         "defaultPrice": 10000,
         "salePrice": 9000
@@ -27,7 +25,6 @@
     "id": "3",
     "name": "치즈 피자",
       "type": "main",
-      "description": "치즈, 옥수수",
       "price": {
         "defaultPrice": 8000,
         "salePrice": 7000
@@ -38,7 +35,6 @@
   "4": {
     "id": "4",
     "name": "포테이토 피자",
-    "description":"감자, 베이컨",
     "type": "main",
     "price": {
       "defaultPrice": 10000,
@@ -51,7 +47,6 @@
     "id": "5",
     "name": "불고기 피자",
     "type": "main",
-    "description" : "불고기",
     "price": {
       "defaultPrice": 11000,
       "salePrice": 7000
@@ -62,7 +57,6 @@
   "6": {
     "id": "6",
     "name": "트러플 머쉬룸 피자",
-    "description": "트러플크림소스, 새송이",
     "type": "main",
     "price": {
       "defaultPrice": 11000,
@@ -74,7 +68,6 @@
   "7": {
     "id": "7",
     "name": "고구마 피자",
-    "description": "고구마, 특제소스",
     "type": "main",
     "price": {
       "defaultPrice": 11000,
