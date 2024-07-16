@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import useFormatNumber from "@/hooks/use-format-number";
 
 type MenuListType = {
   name: string;
@@ -20,8 +21,8 @@ const MenuList = (props: MenuListType) => {
     >
       <img src={imageSrc} width="100px" height="100px" />
       <div className="flex flex-col items-start ml-4 justify-between">
-        <p className="text-lg font-semibold">{name}</p>
-        <p className="text-gray-500 text-sm">{price}원</p>
+        <p className="text-2xl font-bold">{name}</p>
+        <p className="text-gray-500 text-xl">{useFormatNumber(price)}원</p>
       </div>
     </div>
   );
