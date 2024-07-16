@@ -5,11 +5,12 @@ type MenuListType = {
   name: string;
   imageSrc: string;
   price: number;
+  description: string;
   id: string;
 };
 
 const MenuList = (props: MenuListType) => {
-  const { name, imageSrc, price, id } = props;
+  const { name, imageSrc, price, description, id } = props;
   const navigae = useNavigate();
   const onClick = () => {
     navigae(`/detail/${id}`);
@@ -23,6 +24,7 @@ const MenuList = (props: MenuListType) => {
       <div className="flex flex-col items-start ml-4 justify-between">
         <p className="text-2xl font-bold">{name}</p>
         <p className="text-gray-500 text-xl">{useFormatNumber(price)}원</p>
+        <p className="text-gray-400 text-lg">{description}</p>
       </div>
     </div>
   );
