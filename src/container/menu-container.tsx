@@ -16,7 +16,6 @@ const MenuContainer = (props: MenuContainerTypes) => {
   );
   const newArr = cartArr.filter(value => value.id === `basketItem${basketId}`);
 
-  console.log("확인", newArr);
   if (isLoading) return <div>로딩중입니다.</div>;
   if (error) console.log("error");
   return (
